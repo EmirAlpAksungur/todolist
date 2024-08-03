@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Grid, Button, Typography } from "@mui/material";
 import MyTextField from "./MyTextField";
+import DeleteIcon from "@mui/icons-material/Delete";
+import CreateIcon from "@mui/icons-material/Create";
+import DoneIcon from "@mui/icons-material/Done";
 const TodoItem = ({ item, handleDelete, handleUpdate }) => {
   const [updateFocus, setUpdateFocus] = useState(false);
   return (
@@ -44,7 +47,7 @@ const TodoItem = ({ item, handleDelete, handleUpdate }) => {
                 handleDelete(item.uuid);
               }}
             >
-              X
+              <DeleteIcon />
             </Button>
           </Grid>
           <Grid item>
@@ -55,7 +58,7 @@ const TodoItem = ({ item, handleDelete, handleUpdate }) => {
                 setUpdateFocus(true);
               }}
             >
-              y
+              <CreateIcon />
             </Button>
           </Grid>
           <Grid item>
@@ -70,7 +73,7 @@ const TodoItem = ({ item, handleDelete, handleUpdate }) => {
                 });
               }}
             >
-              d
+              <DoneIcon />
             </Button>
           </Grid>
         </Grid>
